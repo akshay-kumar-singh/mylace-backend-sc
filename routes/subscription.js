@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const Subscription = require('../models/Subscription'); // Import the Subscription model
+const Subscription = require('../models/Subscription');
 const { sendSubscriptionEmail } = require('../utils/mailer');
 
 router.post('/subscribe', async (req, res) => {
