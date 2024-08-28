@@ -57,11 +57,31 @@ const sendSubscriptionEmail = async (email) => {
   const mailOptions = {
     from: process.env.EMAIL,
     to: email,
-    subject: 'Thank you for subscribing!',
-    text: 'Thank you for subscribing to My Lace Studio! Stay tuned for updates!',
+    subject: '🎉 Welcome to My Lace Studio Family! 🎉',
+    text: `
+    Hi there!
+
+    Thank you for subscribing to My Lace Studio! We're thrilled to have you as a part of our creative community.
+
+    🌟 Here's what you can expect from us: 🌟
+    - Exclusive previews of our latest collections.
+    - Special discounts and offers, just for you!
+    - Inspiring stories and tips to fuel your creativity.
+    - Early access to our upcoming workshops and events.
+
+    We can't wait to share our passion for lace-making with you. Stay tuned for exciting updates that will help you create, explore, and shine in your own unique way.
+
+    If you ever have any questions or just want to say hello, feel free to reach out. We're always here for you!
+
+    Warm regards,
+    The My Lace Studio Team
+
+    P.S. Keep an eye on your inbox for a special welcome gift just for you! 😉
+    `,
   };
 
   await transporter.sendMail(mailOptions);
 };
+
 
 module.exports = { sendRegistrationEmail, sendPasswordResetEmail,sendSubscriptionEmail };
