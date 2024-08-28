@@ -8,12 +8,7 @@ const app = express();
 
 connectDB();
 
-app.use(cors({
-  origin: 'https://mylace.netlify.app', // Allow requests from this domain
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization'],
-}));
-
+app.use(cors());
 app.use(express.json({ extended: false }));
 
 app.use('/api/auth', require('./routes/auth'));
