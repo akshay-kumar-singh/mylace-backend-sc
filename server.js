@@ -9,10 +9,11 @@ const app = express();
 connectDB();
 
 app.use(cors({
-    origin: 'https://mylace.netlify.app', // Replace with your frontend URL
-    methods: 'GET,POST,PUT,DELETE', // Specify allowed methods
-    credentials: true, // Allow credentials (e.g., cookies, authorization headers)
-  }));
+  origin: 'https://mylace.netlify.app', // Allow requests from this domain
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+}));
+
 app.use(express.json({ extended: false }));
 
 app.use('/api/auth', require('./routes/auth'));
