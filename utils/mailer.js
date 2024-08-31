@@ -11,7 +11,7 @@ const transporter = nodemailer.createTransport({
 
 // Function to send registration email
 const sendRegistrationEmail = async (userEmail, token) => {
-  const verificationLink = `http://localhost:5173/verify-email/${token}`;
+  const verificationLink = `https://mylace.netlify.app/verify-email/${token}`;
   const mailOptions = {
     from: process.env.EMAIL,
     to: userEmail,
@@ -33,7 +33,7 @@ const sendRegistrationEmail = async (userEmail, token) => {
 
 // Function to send password reset email
 const sendPasswordResetEmail = async (email, token) => {
-  const resetLink = `http://localhost:5173/reset-password/${token}`;
+  const resetLink = `https://mylace.netlify.app/reset-password/${token}`;
   const mailOptions = {
     from: process.env.EMAIL,
     to: email,
