@@ -6,6 +6,8 @@ const { sendSubscriptionEmail } = require('../utils/mailer');
 router.post('/subscribe', async (req, res) => {
   const { email } = req.body;
 
+  console.log('Subscription request received:', email); 
+
   if (!email) {
     return res.status(400).json({ msg: 'Email is required' });
   }
@@ -27,5 +29,6 @@ router.post('/subscribe', async (req, res) => {
     res.status(500).json({ msg: 'Server error' });
   }
 });
+
 
 module.exports = router;
